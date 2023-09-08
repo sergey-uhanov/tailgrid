@@ -721,6 +721,7 @@ body::after {
       justify-content: space-around;
   -ms-grid-row: 15;
   grid-row: 15px;
+  gap: 15px;
 }
 
 .team__card {
@@ -832,7 +833,6 @@ body::after {
 .centred-text--blue-background {
   background-size: cover;
   padding: 7rem 0;
-  margin-bottom: 7.5rem;
 }
 
 .centred-text--blue-background .centred-text__title {
@@ -859,6 +859,7 @@ body::after {
 }
 
 .grey-background {
+  padding-top: 7.5rem;
   background: #f4f7ff;
   padding-bottom: 7.5rem;
 }
@@ -1484,28 +1485,27 @@ body::after {
 .inform__btn--play-video {
   display: inline-block;
   padding: 0;
+  text-align: center;
 }
 
 .inform__btn--play-video span {
   display: inline-block;
+  height: 54px;
+  width: 54px;
   background-color: #fff;
   border-radius: 50%;
   margin-right: 0.9375rem;
+  position: relative;
+  bottom: 12px;
 }
 
 .inform__btn--play-video span::before {
   content: url("../img/triangle.svg");
   height: 54px;
   width: 54px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
+  top: 13px;
+  left: 2px;
 }
 
 .header--mb140 {
@@ -1782,6 +1782,10 @@ body::after {
     padding-top: 7.5rem;
   }
 
+  .contact-form__background {
+    height: 27.25rem;
+  }
+
   .contact-form__text-block {
     margin-top: 7.5rem;
   }
@@ -2032,6 +2036,10 @@ body::after {
     padding-top: 0.0000000625rem;
   }
 
+  .contact-form__background {
+    height: 16.25rem;
+  }
+
   .contact-form__text-block {
     margin-top: 1.25rem;
   }
@@ -2146,6 +2154,40 @@ body::after {
 @media (max-width: 27.375em) {
   .form-block {
     padding-left: 0;
+  }
+}
+
+@media (max-width: 27rem) {
+  .inform__wrapper-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+
+  .inform__wrapper-btn inform__btn:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .inform__wrapper-btn {
+    margin-top: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 50px;
+  }
+
+  .inform__wrapper-btn .inform__btn:not(:last-child) {
+    width: 196px;
+    margin: 0 auto;
   }
 }
 
@@ -2279,6 +2321,18 @@ body::after {
 @supports not (padding-top: clamp( 0.0000000625rem , -2.3645319375rem  +  11.82266vw , 7.5rem )) {
     .contact-form {
       padding-top: calc(0.0000000625rem + 7.4999999375 * (100vw - 20rem) / 63.4375);
+    }
+}
+
+@supports (height: clamp( 16.25rem , 12.7820197044rem  +  17.3399014778vw , 27.25rem )) {
+    .contact-form__background {
+      height: clamp( 16.25rem , 12.7820197044rem  +  17.3399014778vw , 27.25rem );
+    }
+}
+
+@supports not (height: clamp( 16.25rem , 12.7820197044rem  +  17.3399014778vw , 27.25rem )) {
+    .contact-form__background {
+      height: calc(16.25rem + 11 * (100vw - 20rem) / 63.4375);
     }
 }
 
